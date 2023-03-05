@@ -1,0 +1,47 @@
+.navbar {
+  background-color: rebeccapurple;
+  padding: 15px 50px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+#search-form {
+  max-width: 400px;
+  flex: 1 1 220px;
+}
+
+.ma-logo {
+  width: 200px;
+  border-radius: 30px;
+}
+
+.f-btn {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#search {
+  width: 100%;
+  padding: 10px 25px;
+  font-size: 20px;
+  color: rebeccapurple;
+}
+
+#search:focus {
+  outline: none;
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .ma-logo {
+    width: 150px;
+  }
+}
