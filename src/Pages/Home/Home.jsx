@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { api_key } from "../../../config";
+import "./Home.css";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
+  const img_base_url = "https://image.tmdb.org/t/p/w1280";
 
   useEffect(() => {
     requestMovies();
@@ -18,10 +21,14 @@ export default function Home() {
 
   return (
     <>
-      <ul>
+      <h1>Popular Movies</h1>
+      <ul className="movies-list">
         {movies.map((movie) => (
-          <li key={movie.id}>
-            <h2>{movie.title}</h2>
+          <li key={movie.id} className="movie-container">
+            <Link to={`/${movie.id}`}>
+              <img src={img_base_url + movie.poster_path} alt="{movie.title}" />
+              <div className="overlay"></div>
+            </Link>
           </li>
         ))}
       </ul>
